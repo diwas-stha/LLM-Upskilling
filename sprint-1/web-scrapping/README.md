@@ -30,43 +30,43 @@ pip install requests
 2.  **Sending an HTTP Request**
     To scrape data from a website, we need to send an HTTP GET request to the URL of the webpage we want to scrape. This request retrieves the HTML content of the page.
 
-        ```python
-        url = 'https://example.com'
+    ```python
+    url = 'https://example.com'
         response = requests.get(url)
         html_text = response.text
-
-        ```
+    ```
 
 3.  **Parsing HTML Content**
     Once we have the HTML content, we can parse it using BeautifulSoup. BeautifulSoup provides methods to navigate and extract data from the HTML document easily.
 
-        ```python
-        soup = BeautifulSoup(html_text, 'lxml')
-        ```
+    ```python
+    soup = BeautifulSoup(html_text, 'lxml')
+    ```
 
 4.  **Locating Data**
     To locate the specific data we want to scrape within the HTML document involves identifying HTML elements, their attributes, and their hierarchy.
 
-        ```python
-        data = soup.find('div', class_='example-class')
-        ```
+    ```python
+    data = soup.find('div', class_='example-class')
+
+    ```
 
 5.  **Extracting Data**
     Once we've located the data, we can extract it using BeautifulSoup methods. For example, we can extract text or attribute values.
 
-        ```python
-        text = data.text
-        attribute_value = data['attribute_name']
+    ```python
+    text = data.text
+    attribute_value = data['attribute_name']
 
-        ```
+    ```
 
 6.  **Storing Data**
     After extracting the data, we can store it in an appropriate data structure, such as lists or dictionaries, for further processing or saving.
 
-        ```python
-        data_list = []
-        data_list.append(data)
-        ```
+    ```python
+    data_list = []
+    data_list.append(data)
+    ```
 
 7.  **Handling Pagination (if necessary)**
     Finally, we can save the scraped data to a file format of your choice, such as JSON or CSV, for future analysis or use.
