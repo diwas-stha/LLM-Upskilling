@@ -113,4 +113,5 @@ for entity in named_entities:
 ## References
 
 [SpaCy 101](https://spacy.io/usage/spacy-101#annotations)
+
 [NLP with SpaCy](https://github.com/thapaliya123/nlp-using-spacy)

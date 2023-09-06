@@ -134,6 +134,6 @@ def named_entity_recognizer(text):
 
 ## References
 
-[NLP using NLTK](https://github.com/thapaliya123/nlp-using-nltk/tree/master)
-[Natural Language Processing with Python](https://www.nltk.org/book/)
-[NLTK: A Beginners Hands-on Guide to Natural Language Processing](https://www.analyticsvidhya.com/blog/2021/07/nltk-a-beginners-hands-on-guide-to-natural-language-processing/)
+- [NLP using NLTK](https://github.com/thapaliya123/nlp-using-nltk/tree/master)
+- [Natural Language Processing with Python](https://www.nltk.org/book/)
+- [NLTK: A Beginners Hands-on Guide to Natural Language Processing](https://www.analyticsvidhya.com/blog/2021/07/nltk-a-beginners-hands-on-guide-to-natural-language-processing/)
