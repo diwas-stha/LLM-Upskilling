@@ -43,12 +43,9 @@ def lowercase(text):
         str: The input text in lowercase.
     """
 
-    stopwords = nlp.Defaults.stop_words
+    text_to_lower = text.lower()
 
-    doc = nlp(text)
-    filtered_text = " ".join(
-        token.text for token in doc if token.text.lower() not in stopwords)
-    return filtered_text
+    return text_to_lower
 
 
 def remove_stopwords(text):
@@ -134,7 +131,7 @@ if __name__ == "__main__":
     print(lemmatized_words)
 
     # Named Entity Recognition using spaCy
-    named_entities_spacy = named_entity_recognition(text)
+    named_entities = named_entity_recognition(text)
     print("\nNamed Entities:")
-    for entity in named_entities_spacy:
+    for entity in named_entities:
         print(f"Text: {entity.text}, Label: {entity.label_}")
