@@ -2,19 +2,19 @@
 
 Neural Machine Translation (NMT) **i**s a way to do Machine Translation with a single neural network. The neural network architecture is called **sequence-to-sequence (aka seq2seq)** and it involves **two RNNs**
 
-![Untitled](Seq2Seq%20-%20Neural%20Machine%20translation%201c5f8ad2025a434bae890fa15fd816c6/Untitled.png)
+![Untitled](images/Untitled.png)
 
-The sequence-to-sequence model is an example of a **conditional Language Model.** 
+The sequence-to-sequence model is an example of a **conditional Language Model.**
 
 - **It is a Language Model** because the decoder is predicting the next word of the target sentence y.
 - It is **Conditional** because its predictions are also conditioned on the source sentence x. NMT directly calculate $P(y|x)$.
 - In language model: $P(y_1, ..., y_{T})$
 - In machine translation: $P(y_1, ..., y_{T}|x_1, ...,x_T)$
 - What we don't want in machine translation model, is not to sample the output at random. This may provide some choices as an output. Sometimes you may sample a bad output.
-- Ideally, we want to find a translation $y$  that maximizes $p(y | x)$.
+- Ideally, we want to find a translation $y$ that maximizes $p(y | x)$.
 - So we need to get the best output it can be:
 
-![https://raw.githubusercontent.com/ashishpatel26/DeepLearning.ai-Summary/master/5- Sequence Models/Images//56.png](https://raw.githubusercontent.com/ashishpatel26/DeepLearning.ai-Summary/master/5- Sequence Models/Images//56.png)
+![Untitled](images/Untitled4.png)
 
 *We could try computing all possible sequences y.* This means that on each step t of the decoder, we are tracking $V_t$ possible partial translations, where V is vocab size. This $O(V^T)$ complexity is **far too expensive!**
 
@@ -32,35 +32,35 @@ The sequence-to-sequence model is an example of a **conditional Language Model.
 ## Stopping Criteria for Beam Search
 
 - In greedy decoding, we usually decode until model produces a <END> token,
-    - for example, `<START> he hit me with a pie <END>`.
+  - for example, `<START> he hit me with a pie <END>`.
 - In beam search decoding, different hypotheses may produce <END> tokens on different timesteps.
-    - When a hypothesis produces <END>, that hypothesis is complete.
-    - Beam searching places it aside and continues exploring other hypotheses. ******
+  - When a hypothesis produces <END>, that hypothesis is complete.
+  - Beam searching places it aside and continues exploring other hypotheses. **\*\***
 - We usually continue beam search until we reach timestep T ( where T is some pre-defined cutoff), or we have at least n completed hypotheses (where n is pre-defined cutoff).
 
 ## Refinement to Beam Search
 
 - The first thing is **Length optimization**
 
-![Untitled](Seq2Seq%20-%20Neural%20Machine%20translation%201c5f8ad2025a434bae890fa15fd816c6/Untitled%201.png)
+![Untitled](images/Untitled%201.png)
 
 - The second thing is how can we choose best `B`?
-    - The larger B - the larger possibilities, the better are the results. But it will be more computationally expensive.
-    - In practice, you might see in the production setting `B=10`
-    - `B=100`, `B=1000` are uncommon (sometimes used in research settings)
-    - Unlike exact search algorithms like BFS (Breadth First Search) or DFS (Depth First Search), Beam Search runs faster but is not guaranteed to find the exact solution.
+  - The larger B - the larger possibilities, the better are the results. But it will be more computationally expensive.
+  - In practice, you might see in the production setting `B=10`
+  - `B=100`, `B=1000` are uncommon (sometimes used in research settings)
+  - Unlike exact search algorithms like BFS (Breadth First Search) or DFS (Depth First Search), Beam Search runs faster but is not guaranteed to find the exact solution.
 
 # Attention Model
 
-The bottleneck problem of seq2seq is that the bottleneck needs to capture all information about the source sentence. It made it challenging for the models to deal with long sentences. Attention provides a solution to the bottleneck problem. ***The core idea is that, on each step of the decoder, use a direct connection to the encoder to focus on a particular part of the source sequence***.
+The bottleneck problem of seq2seq is that the bottleneck needs to capture all information about the source sentence. It made it challenging for the models to deal with long sentences. Attention provides a solution to the bottleneck problem. **_The core idea is that, on each step of the decoder, use a direct connection to the encoder to focus on a particular part of the source sequence_**.
 
 ![https://miro.medium.com/v2/resize:fit:640/1*pZ69p8di49K_xggqYLYbJA.gif](https://miro.medium.com/v2/resize:fit:640/1*pZ69p8di49K_xggqYLYbJA.gif)
 
-- Instead of passing the last hidden state of the encoding stage, the encoder passes *all* the hidden states to the decoder.
+- Instead of passing the last hidden state of the encoding stage, the encoder passes _all_ the hidden states to the decoder.
 - Second, an attention decoder does an extra step before producing its output:
-    1. Look at the set of encoder hidden states it received – each encoder hidden state is most associated with a certain word in the input sentence
-    2. Give each hidden state a score (let’s ignore how the scoring is done for now)
-    3. Multiply each hidden state by its softmaxed score, thus amplifying hidden states with high scores, and drowning out hidden states with low scores.
+  1. Look at the set of encoder hidden states it received – each encoder hidden state is most associated with a certain word in the input sentence
+  2. Give each hidden state a score (let’s ignore how the scoring is done for now)
+  3. Multiply each hidden state by its softmaxed score, thus amplifying hidden states with high scores, and drowning out hidden states with low scores.
 
 Attention solves the bottleneck problem by allowing the decoder to look directly source and bypass bottleneck. Attention helps with vanishing gradient problem by provides a shortcut to faraway states.
 
