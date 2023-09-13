@@ -10,7 +10,7 @@ Traditional neural networks do not account for the temporal nature of data. They
 
 ## Why Sequence Models?
 
-![Untitled](RNN%20f2276010073f4697bee28753456c8d2e/Untitled.png)
+![Untitled](images/Untitled.png)
 
 # **Recurrent Neural Network (RNN)**
 
@@ -23,7 +23,7 @@ A Recurrent Neural Network (RNN) is a class of neural networks that have shown g
 - RNNs have connections that form loops, allowing information to persist through time steps. This looped structure enables the network to carry context from one step to the next.
 - The same set of weights and biases are shared across all time steps.
 
-![Untitled](RNN%20f2276010073f4697bee28753456c8d2e/Untitled%201.png)
+![Untitled](images/Untitled%201.png)
 
 ## Forward Pass
 
@@ -55,11 +55,11 @@ Backpropagation to handle sequential information.
 
 ### Defining total Loss
 
-![Untitled](RNN%20f2276010073f4697bee28753456c8d2e/Untitled%202.png)
+![Untitled](images/Untitled%202.png)
 
-![Untitled](RNN%20f2276010073f4697bee28753456c8d2e/Untitled%203.png)
+![Untitled](images/Untitled%203.png)
 
-![Untitled](RNN%20f2276010073f4697bee28753456c8d2e/Untitled%204.png)
+![Untitled](images/Untitled%204.png)
 
 - Where the first equation is the loss for one example and the loss for the whole sequence is given by the summation over all the calculated single example losses.
 
@@ -82,11 +82,11 @@ Backpropagation to handle sequential information.
 - Exploding gradient
     - **************************Solution:************************** Gradient clipping to scale big gradient
     
-    ![Untitled](RNN%20f2276010073f4697bee28753456c8d2e/Untitled%205.png)
+    ![Untitled](images/Untitled%205.png)
     
 - Vanishing gradients
     
-    ![Untitled](RNN%20f2276010073f4697bee28753456c8d2e/Untitled%206.png)
+    ![Untitled](images/Untitled%206.png)
     
 
 ## LSTM and GRU
@@ -95,15 +95,15 @@ GRU and LSTM are types of RNN that can help solve the vanishing gradient problem
 
 ## LSTM(
 
-![Untitled](RNN%20f2276010073f4697bee28753456c8d2e/Untitled%207.png)
+![Untitled](images/Untitled%207.png)
 
 The cell state is independent from what is directly outputted.
 
 Cell state update with gates that control flow of information.
 
-![Untitled](RNN%20f2276010073f4697bee28753456c8d2e/Untitled%208.png)
+![Untitled](images/Untitled%208.png)
 
-![Untitled](RNN%20f2276010073f4697bee28753456c8d2e/Untitled%209.png)
+![Untitled](images/Untitled%209.png)
 
 ## GRU
 
@@ -120,7 +120,7 @@ GRU is another variant of the traditional RNN architecture, like LSTM, designed 
 4. **Hidden State** 
     - Computed by combining the previous hidden state with the candidate state.
 
-![Untitled](RNN%20f2276010073f4697bee28753456c8d2e/Untitled%2010.png)
+![Untitled](images/Untitled%2010.png)
 
 # **Language Models**
 
