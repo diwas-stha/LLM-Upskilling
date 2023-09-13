@@ -8,8 +8,8 @@ This repository consists of all the derivarables for the LLM Upskilling for the 
    - [Web Scrapping](https://github.com/diwas-stha/LLM-Upskilling/tree/main/sprint-1/web-scrapping)
    - [Text Preprocessing](https://github.com/diwas-stha/LLM-Upskilling/tree/main/sprint-1/text-preprocessing)
 2. Sprint 2
-   - [Recurrent Neural Network]()
-   - [Neural Machine Translation]()
+   - [Recurrent Neural Network](https://github.com/diwas-stha/LLM-Upskilling/blob/main/sprint-2/RNN/RNN.md)
+   - [Neural Machine Translation](https://github.com/diwas-stha/LLM-Upskilling/blob/main/sprint-2/Seq2Seq/Seq2Seq_and_Attention.md)
    - [Bleu Score]()
 3. Sprint 3
    - [Tranformer Architecture]()
