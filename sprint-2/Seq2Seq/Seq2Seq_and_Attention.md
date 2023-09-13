@@ -54,7 +54,7 @@ The sequence-to-sequence model is an example of a **conditional Language Model.
 
 The bottleneck problem of seq2seq is that the bottleneck needs to capture all information about the source sentence. It made it challenging for the models to deal with long sentences. Attention provides a solution to the bottleneck problem. **_The core idea is that, on each step of the decoder, use a direct connection to the encoder to focus on a particular part of the source sequence_**.
 
-![https://miro.medium.com/v2/resize:fit:640/1*pZ69p8di49K_xggqYLYbJA.gif](https://miro.medium.com/v2/resize:fit:640/1*pZ69p8di49K_xggqYLYbJA.gif)
+![Untitled](images/Untitled5.gif)
 
 - Instead of passing the last hidden state of the encoding stage, the encoder passes _all_ the hidden states to the decoder.
 - Second, an attention decoder does an extra step before producing its output:
@@ -68,7 +68,7 @@ Note that the model isn’t just mindless aligning the first word at the output 
 
 One fun way to see how attention works is by visualizing the attention weights:
 
-![Untitled](Seq2Seq%20-%20Neural%20Machine%20translation%201c5f8ad2025a434bae890fa15fd816c6/Untitled%202.png)
+![Untitled](images/Untitled%202.png)
 
 # BLEU Score
 
