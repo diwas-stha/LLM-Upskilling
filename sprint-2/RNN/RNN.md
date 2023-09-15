@@ -35,7 +35,7 @@ $h_t = tanh(W_{hh}h_{t−1} + W_{xh}x_t)$
 
 Output at time step t:
 
-$y_t = W_{hy}h_t
+$y_t = W_{hy}h_t$
 
 Where:
 
